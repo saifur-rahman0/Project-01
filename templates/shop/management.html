@@ -1,0 +1,57 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block title %}Management - Marketplace{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/management.css' %}">
+
+<section class="management-hero py-5">
+	<div class="container">
+		<div class="hero-card rounded p-4 d-flex align-items-center">
+			<div class="hero-media me-4">
+				<img src="/media/Products/IMG-20250924-WA0009.jpg" alt="md" class="rounded hero-portrait">
+			</div>
+			<div class="hero-text text-white ms-3">
+				<p>Customer's & Business partner's satisfaction is one of the central aspects of our organizational culture. Total Customer's & Business partner's satisfaction is the only success formula that drives us to be in this competitive fashion clothing industry. I would like to sincerely thank our valued clients & business partners for your continued support in ensuring that we remain our long-term relationship to have good business in future.</p>
+				<div class="mt-3"><strong>MD. MOFAZZAL HOSEN PAVEL</strong><br><small>Managing Director & CEO</small></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="management-team py-5">
+	<div class="container">
+		<h3 class="section-title">Management Team</h3>
+		<div class="row mt-4 gx-4 justify-content-center">
+			<div class="col-md-4">
+				<div class="team-card text-center rounded">
+					<img src="/media/Products/IMG-20250924-WA0010.jpg" alt="member1" class="team-img rounded-circle mb-3">
+					<div class="team-info p-3 rounded">
+						<div class="team-name">Paritosh Chandra Dash</div>
+						<div class="team-role small text-muted">Director</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="team-card text-center rounded">
+					<img src="/media/Products/IMG-20250924-WA0011.jpg" alt="member2" class="team-img rounded-circle mb-3">
+					<div class="team-info p-3 rounded">
+						<div class="team-name">Sophy Sollars</div>
+						<div class="team-role small text-muted">Sales & Design Director, DSL UK</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="team-card text-center rounded">
+					<img src="/media/Products/IMG-20250924-WA0012.jpg" alt="member3" class="team-img rounded-circle mb-3">
+					<div class="team-info p-3 rounded">
+						<div class="team-name">Christo Craig</div>
+						<div class="team-role small text-muted">COO, DSL</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

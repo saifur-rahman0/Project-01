@@ -1,0 +1,3 @@
+.product-card { border:1px solid #eee; }
+.product-img { height:180px; object-fit:cover; }
+.product-img.placeholder { height:180px; display:flex; align-items:center; justify-content:center; background:#f7f7f7; color:#666; }

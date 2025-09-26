@@ -1,0 +1,40 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block title %}{{ category_title }} - Marketplace{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/products.css' %}">
+
+<div class="container">
+  <h2 class="mb-4">{{ category_title }}</h2>
+  <div class="row">
+    {% for product in products %}
+      <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="card product-card h-100">
+          {% if product.image %}
+            <img src="{{ product.image.url }}" class="card-img-top product-img" alt="{{ product.name }}">
+          {% else %}
+            <div class="product-img placeholder">No image</div>
+          {% endif %}
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text mt-auto"><strong>${{ product.price }}</strong></p>
+            <form method="post" action="{% url 'add_to_cart' %}">
+              {% csrf_token %}
+              <input type="hidden" name="product_id" value="{{ product.id }}">
+              <div class="d-flex gap-2 align-items-center mt-2">
+                <input type="number" name="quantity" value="1" min="1" class="form-control form-control-sm" style="width:80px;">
+                <button class="btn btn-orange btn-sm">Add to cart</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p>No products found in this category.</p>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

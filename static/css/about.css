@@ -1,0 +1,136 @@
+.logos {
+  overflow: hidden;
+  padding: 60px 0;
+  background: white;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+
+.logos-slide img {
+  height: 50px;
+  margin: 0 40px;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* New slideshow styles */
+.slideshow-section {
+    position: relative;
+}
+
+.slideshow-section.is-pinned .slideshow-inner {
+    position: fixed;
+    top: 80px; /* Adjust as needed */
+    width: 100%;
+    left: 0; /* Added for centering */
+    right: 0; /* Added for centering */
+}
+
+.slideshow-inner {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Reduced height */
+    display: flex; /* Added for centering */
+    justify-content: center; /* Added for centering */
+    align-items: center; /* Added for centering */
+}
+
+.slides {
+    position: relative;
+    width: 80%; /* Limit the width of the slides container */
+    max-width: 900px; /* Add a max-width */
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa; /* Card background color */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Card shadow */
+    padding: 20px; /* Padding for the card */
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-media {
+    flex: 1;
+}
+
+.slide-media img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Rounded corners for the image */
+}
+
+.slide-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.slideshow-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333;
+}

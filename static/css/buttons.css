@@ -1,0 +1,31 @@
+/* Global button styles matching the provided orange button */
+.btn-orange, .btn-outline-orange, .btn-contact {
+  background: #ef6b3a;
+  color: #ffffff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.btn-orange:hover, .btn-outline-orange:hover, .btn-contact:hover {
+  background: #411cc9;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* secondary style if we need lighter variant */
+.btn-light-outline {
+  background: #fff7f6;
+  color: #ef6b3a;
+  border: 1px solid rgba(239,107,58,0.12);
+}
+
+/* Icon inside button */
+.btn-icon { width:20px; height:20px; display:inline-block; }
+
+/* Full-width large button */
+.btn-lg.w-100 { padding:14px 20px; border-radius:6px; }

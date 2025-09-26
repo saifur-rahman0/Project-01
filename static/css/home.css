@@ -1,0 +1,98 @@
+.hero-carousel {
+    position: relative;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.carousel-item {
+    display: none;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-control-prev {
+    left: 10px;
+}
+
+.carousel-control-next {
+    right: 10px;
+}
+
+.btn:hover {
+    background-color: #e0e0e0; /* Lighter background on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.btn-outline-orange:hover {
+    background-color: #ef6b3a; /* Orange background on hover */
+    color: white; /* White text on hover */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+}
+
+/* Stat cards styles */
+.stat-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 200px; /* Ensure cards have a minimum width */
+}
+
+.stat-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.stat-num {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #f1642b; /* Specified color */
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 1em;
+    color: #6c757d;
+}
+
+.carousel-inner img {
+    max-height: 400px; /* Set a maximum height */
+    object-fit: cover; /* Crop the image to fit while maintaining aspect ratio */
+}
+
+.hero-title,
+.why h3 {
+    text-shadow: 2px 2px 4px #ffefb8;
+}
+
+.vision img {
+    max-height: 300px; /* Set a maximum height */
+    object-fit: cover; /* Crop the image to fit while maintaining aspect ratio */
+    width: 100%; /* Ensure it takes full width of its container */
+}

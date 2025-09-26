@@ -1,0 +1,118 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block title %}About Us - Marketplace{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+<section class="about-hero py-5">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-6 mb-4 mb-lg-0">
+				<h5 class="eyebrow">About DSL</h5>
+				<p class="lead">Dongyi Sourcing Limited is a Multinational apparel buying hub and exporter with a vision to deliver world-class service.</p>
+			</div>
+			<div class="col-lg-6">
+				<div class="hero-image" style="background-image:url('/media/Logos/IMG-20250924-WA0002.jpg');"></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="partners py-4">
+	<div class="container">
+        <div class="partners-box text-center p-4 rounded">
+            <div class="h6 text-orange mb-3">We have worked with</div>
+            <div class="logos">
+                <div class="logos-slide">
+                    <img src="/media/Logos/IMG-20250924-WA0002.jpg" alt="partner logo" />
+                    <img src="/media/Logos/IMG-20250924-WA0002.jpg" alt="partner logo" />
+                    <img src="/media/Logos/IMG-20250924-WA0002.jpg" alt="partner logo" />
+                    <img src="/media/Logos/IMG-20250924-WA0002.jpg" alt="partner logo" />
+                    <img src="/media/Logos/IMG-20250924-WA0002.jpg" alt="partner logo" />
+                    <img src="/media/Logos/IMG-20250924-WA0002.jpg" alt="partner logo" />
+                    <img src="/media/Logos/IMG-20250924-WA0002.jpg" alt="partner logo" />
+                </div>
+                <div class="logos-slide">
+                    <img src="/media/Logos/IMG-20250924-WA0002.jpg" alt="partner logo" />
+                    <img src="/media/Logos/IMG-20250924-WA0002.jpg" alt="partner logo" />
+                    <img src="/media/Logos/IMG-20250924-WA0002.jpg" alt="partner logo" />
+                    <img src="/media/Logos/IMG-20250924-WA0002.jpg" alt="partner logo" />
+                    <img src="/media/Logos/IMG-20250924-WA0002.jpg" alt="partner logo" />
+                    <img src="/media/Logos/IMG-20250924-WA0002.jpg" alt="partner logo" />
+                    <img src="/media/Logos/IMG-20250924-WA0002.jpg" alt="partner logo" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-main py-5">
+	<div class="container">
+		<div class="content-card p-4 rounded shadow-sm">
+			<p><strong class="text-orange">Dongyi Sourcing Limited</strong> is a Multinational apparel buying hub and exporter with a vision to deliver world-class service, quality solutions and value addition services to end products for the textile industries on a global level, beginning from fabrics to fashion through market knowledge, experienced sourcing professionals. Global headquarter of Dongyi sourcing located at North Point, Hong Kong and Global corporate office located at Dhaka, Bangladesh. Our design, sales and sourcing offices in UK, China & Hong Kong. Dongyi Sourcing offers product sourcing, amazing design collection, best production execution with on-time shipment, best quality assurance, supply chain solutions towards building a stake holding approach to business.</p>
+
+			<blockquote class="quote my-4 p-3 rounded">
+				We have been cooperated with famous international buyers such as NEXT (UK), Inditex (Spain), John Lewis (UK), LPP (Poland), Crew clothing (UK), ASOS (UK), Biedronka (Poland), MLSE (Canada), Tequila Tromba (Canada), Six Label (Canada), Jeanologie – Walmart (Canada).
+			</blockquote>
+
+			<p>We are associated with top rated factories (Woven, Jersey and Knitwear) in Bangladesh who are highly organized, qualified, for quality and on-time product, and of course compliance certified. We have few green certified factories as well. We have a dynamic, talented, and well-experienced team working with us and a great office structure, including fabric sourcing, garment technology & compliance.</p>
+		</div>
+
+		<div class="row mt-5 gx-4">
+			<div class="col-md-6 mb-4">
+				<div class="feature-card rounded p-3">
+					<img src="/media/Products/IMG-20250924-WA0003.jpg" alt="lab" class="w-100 rounded mb-3 feature-img">
+					<h6>Equipped Technical Lab</h6>
+					<p class="small text-muted">to make sure the quality.</p>
+				</div>
+			</div>
+			<div class="col-md-6 mb-4">
+				<div class="feature-card rounded p-3">
+					<img src="/media/Products/IMG-20250924-WA0004.jpg" alt="sample" class="w-100 rounded mb-3 feature-img">
+					<h6>Dedicated Sample Section</h6>
+					<p class="small text-muted">to ensure the accuracy of buyer demand.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Scroll-driven slideshow section -->
+        <section class="slideshow-section" id="slideshow-section">
+            <div class="slideshow-spacer" id="slideshow-spacer">
+                <div class="slideshow-inner">
+                    <div class="slides" id="slides">
+                    <div class="slide" data-index="0">
+                        <div class="slide-media"><img src="/media/Products/IMG-20250924-WA0005.jpg" alt="Slide 1" onerror="this.style.display='none'"></div>
+                        <div class="slide-content">
+                            <h3>Mission</h3>
+                            <p>We are committed to setting ethical business standards by delivering exceptional service, quality, and integrity. Through eco-friendly technologies and a skilled workforce, we empower associated factories to meet customer expectations.</p>
+                        </div>
+                    </div>
+                    <div class="slide" data-index="1">
+                        <div class="slide-media"><img src="/media/Products/IMG-20250924-WA0006.jpg" alt="Slide 2" onerror="this.style.display='none'"></div>
+                        <div class="slide-content">
+                            <h3>Fabric Sourcing</h3>
+                            <p>Our fabric sourcing, development, and research team consistently strives to deliver innovative fabrics and trims that align with high-street fashion trends.</p>
+                        </div>
+                    </div>
+                    <div class="slide" data-index="2">
+                        <div class="slide-media"><img src="/media/Products/IMG-20250924-WA0007.jpg" alt="Slide 3" onerror="this.style.display='none'"></div>
+                        <div class="slide-content">
+                            <h3>Vision</h3>
+                            <p>To become a reliable global apparel sourcing organization that provides excellence and quality through innovation with a forward-looking approach.</p>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="slideshow-dots" id="slideshow-dots">
+                    <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+                    <button class="dot" data-index="1" aria-label="Slide 2"></button>
+                    <button class="dot" data-index="2" aria-label="Slide 3"></button>
+                </div>
+                </div>
+            </div>
+        </section>
+		<script src="{% static 'js/scroll-slideshow.js' %}"></script>
+	</div>
+</section>
+
+{% endblock %}

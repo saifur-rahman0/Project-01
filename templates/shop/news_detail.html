@@ -1,0 +1,13 @@
+{% extends 'shop/base.html' %}
+
+{% block title %}{{ news.title }} - Marketplace{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2>{{ news.title }}</h2>
+  <div class="card p-3">
+    <div class="mb-2 small text-muted">{{ news.created_at }}</div>
+    <div>{{ news.description }}</div>
+  </div>
+</div>
+{% endblock %}

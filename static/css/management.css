@@ -1,0 +1,16 @@
+/* Management page styles */
+.management-hero .hero-card { background: linear-gradient(180deg,#0f2a33 0%, #16323a 100%); color:#fff; position:relative; overflow:hidden; }
+.hero-portrait { width:180px; height:220px; object-fit:cover; border-radius:6px; }
+.hero-text p { max-width:70%; line-height:1.6; }
+
+.management-team .section-title { font-weight:700; margin-bottom:10px; }
+.team-card { background:transparent; }
+.team-img { width:180px; height:180px; object-fit:cover; }
+.team-info { background: rgba(0,0,0,0.06); margin-top:-30px; display:inline-block; min-width:200px; }
+.team-name { font-weight:700; }
+
+@media (max-width:768px) {
+  .hero-text p { max-width:100%; }
+  .hero-portrait { width:120px; height:150px; }
+  .team-img { width:120px; height:120px; }
+}

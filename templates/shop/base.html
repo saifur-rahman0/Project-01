@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Marketplace{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/buttons.css' %}" rel="stylesheet">
+    <link href="{% static 'css/footer.css' %}" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Marketplace</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{% url 'category_list' 'K' %}">Kids</a></li>
+                            <li><a class="dropdown-item" href="{% url 'category_list' 'M' %}">Mens</a></li>
+                            <li><a class="dropdown-item" href="{% url 'category_list' 'W' %}">Womens</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'management' %}">Management</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'news_list' %}">News & Events</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'password_reset' %}">Sign Up</a>
+                        </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'cart' %}">Cart</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Latest news band -->
+    <div class="container-fluid footer-latest mt-5">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center" style="flex:1;">
+                    <div class="latest-label">Latest</div>
+                    <div class="latest-marquee border p-2 ms-0" style="width:100%;border-left:0;border-radius:0 2px 2px 0;">
+                        <div class="marquee-track">
+                            {% if LATEST_NEWS_LIST %}
+                                {% for n in LATEST_NEWS_LIST %}
+                                    <a href="{% url 'news_detail' n.id %}" class="me-3 text-decoration-none text-dark">{{ n.title }}</a>
+                                    <span class="mx-2 text-muted">•</span>
+                                {% endfor %}
+                                {% comment %} Duplicate content for smooth looping {% endcomment %}
+                                {% for n in LATEST_NEWS_LIST %}
+                                    <a href="{% url 'news_detail' n.id %}" class="me-3 text-decoration-none text-dark">{{ n.title }}</a>
+                                    <span class="mx-2 text-muted">•</span>
+                                {% endfor %}
+                            {% else %}
+                                No news at the moment.
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <a class="btn" href="#" style="background:#ef6b3a;color:#fff;border-radius:6px;">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="container-fluid" style="background:#fbf6f6;padding:60px 0 30px;border-top:1px solid #f0e1e1;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h6 style="font-weight:700;color:#2f2b49;">BANGLADESH OFFICE</h6>
+                    <p class="small text-muted">Unicentral 7th floor, United Terminal, Civil Aviation Plot, Kurmitola, Dhaka 1229, Bangladesh.</p>
+                    <p class="small text-muted mb-0">📞 +88 09610-980098</p>
+                    <p class="small text-muted">✉️ info@dongyi.hk</p>
+                </div>
+                <div class="col-md-3">
+                    <h6 style="font-weight:700;color:#2f2b49;">UK OFFICE</h6>
+                    <p class="small text-muted">Office 6 & 8 Leicester Lane, Desford Hall, Leicester, Le9 9jj, England</p>
+                    <p class="small text-muted mb-0">📞 +447305062587</p>
+                    <p class="small text-muted">✉️ info@dongyi.co.uk</p>
+                </div>
+                <div class="col-md-3">
+                    <h6 style="font-weight:700;color:#2f2b49;">HONG KONG OFFICE</h6>
+                    <p class="small text-muted">Level 43, AIA Tower, 183 Electric Road, North Point, HongKong</p>
+                    <p class="small text-muted">✉️ info@dongyi.hk</p>
+                </div>
+                <div class="col-md-3">
+                    <h6 style="font-weight:700;color:#2f2b49;">Pages</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="{% url 'category_list' 'K' %}">Kids</a></li>
+                        <li><a href="{% url 'category_list' 'M' %}">Mens</a></li>
+                        <li><a href="{% url 'category_list' 'W' %}">Womens</a></li>
+                        <li><a href="{% url 'management' %}">Management</a></li>
+                        <li><a href="{% url 'news_list' %}">News & Events</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <!-- social icons (simple text for now) -->
+                    <a href="#" class="text-muted me-2"><img src="/media/Logos/facebook_icon.png" alt="Facebook" style="width: 24px; height: 24px;"></a>
+                    <a href="#" class="text-muted me-2"><img src="/media/Logos/X icon.png" alt="X" style="width: 24px; height: 24px;"></a>
+                    <a href="#" class="text-muted me-2"><img src="/media/Logos/instagram icon.png" alt="Instagram" style="width: 24px; height: 24px;"></a>
+                    <a href="#" class="text-muted"><img src="/media/Logos/youtube icon.png" alt="YouTube" style="width: 24px; height: 24px;"></a>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12 text-center text-muted small">
+                    Copyright © 2025 | Dongyi Sourcing Limited. | All Rights Reserved | Developed By DSL IT
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/news-ticker.js' %}"></script>
+</body>
+</html>

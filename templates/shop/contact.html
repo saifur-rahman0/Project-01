@@ -1,0 +1,51 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block title %}Contact - Marketplace{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+<section class="contact-hero py-5">
+	<div class="container">
+		<h2 class="text-center mb-4">Send a Message: Have a question or feedback? Write to us</h2>
+		        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+		<div class="row gx-4 align-items-start">
+			<div class="col-lg-4">
+				<div class="contact-left">
+					<img src="/media/Products/IMG-20250924-WA0008.jpg" alt="office" class="img-fluid rounded mb-3 contact-thumb">
+					<p class="lead">You’re always welcome to visit us—we’d be happy to share a cup of coffee. You can also reach out to us in writing at any time.</p>
+				</div>
+			</div>
+			<div class="col-lg-8">
+				<div class="contact-form-card rounded p-4">
+					<form method="post">
+						{% csrf_token %}
+                        <div class="mb-3">
+                            <label for="id_name" class="form-label">Your Name</label>
+                            {{ form.name }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_email" class="form-label">Email Address</label>
+                            {{ form.email }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_message" class="form-label">Message</label>
+                            {{ form.message }}
+                        </div>
+						<div class="d-grid">
+							<button class="btn btn-orange btn-lg">Send your message</button>
+						</div>
+					</form>
+				</div>
+			</div>
+	</div>
+</section>
+
+{% endblock %}

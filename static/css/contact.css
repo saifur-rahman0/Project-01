@@ -1,0 +1,13 @@
+/* Contact page styles */
+.contact-hero h2 { color:#2e2a3a; font-weight:600; }
+.contact-left .contact-thumb { width:180px; height:120px; object-fit:cover; }
+.contact-left .lead { color:#4b4b52; }
+
+.contact-form-card { background:#fff7f6; border:1px solid #f3e7e6; }
+.btn-orange { background:#ef6b3a; color:#fff; border:none; }
+.btn-orange:hover { background:#e45f2f; }
+
+@media (max-width:767px) {
+  .contact-left { text-align:center; }
+  .contact-left .contact-thumb { margin:0 auto; }
+}
